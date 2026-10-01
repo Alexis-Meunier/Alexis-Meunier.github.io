@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real-time Movement Filter - Alexis Meunier</title>
+  <meta name="description" content="A GStreamer plugin that highlights moving objects in red. The CUDA version runs the whole pipeline on the GPU.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../nav.js" data-root="../" defer></script>
+</head>
+<body>
+  <main class="project">
+    <h1>Real-time Movement Filter</h1>
+    <p class="lead">A GStreamer plugin that highlights moving objects in red. The CUDA version runs the whole pipeline on the GPU.</p>
+    <p class="meta">C++, CUDA, GStreamer. <a href="https://github.com/Alexis-Meunier">Source on GitHub</a></p>
+
+    <h2>Overview</h2>
+    <p>The filter learns the background of a fixed camera, compares each frame with it, cleans the result and paints the moving areas in red. A plain C++ version is kept as a sequential reference.</p>
+
+    <h2>Features</h2>
+    <ul class="features">
+      <li>Per-pixel background model with 5 reservoirs, then difference, noise removal and hysteresis thresholding</li>
+      <li>One GPU thread per pixel, with state buffers allocated once and reused</li>
+      <li>Separable erosion and dilation</li>
+      <li>Hysteresis reconstruction on 32x32 tiles in shared memory, repeated until it converges</li>
+      <li>Hardcoded thresholds, so results depend on the video</li>
+    </ul>
+
+    <h2>Demo</h2>
+    <div class="demo">
+  <div class="pair"><figure><img src="../media/video03.gif" alt="Original video"><figcaption>Original</figcaption></figure><figure><img src="../media/output.gif" alt="Filtered video"><figcaption>Filtered</figcaption></figure></div>
+    </div>
+
+    <h2>Run it</h2>
+    <pre><code>nix develop
+cmake -S . -B build --preset release -D USE_CUDA=ON
+cmake --build build
+export GST_PLUGIN_PATH=$(pwd)
+ln -sf ./build/libgstcudafilter-cpp.so libgstcudafilter.so
+gst-launch-1.0 uridecodebin uri=file://$(pwd)/input.mp4 ! videoconvert ! &quot;video/x-raw, format=(string)RGB&quot; ! cudafilter ! videoconvert ! fpsdisplaysink</code></pre>
+
+    <p class="back"><a href="../index.html#projects">Back to all projects</a></p>
+  </main>
+</body>
+</html>

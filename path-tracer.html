@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPU Path Tracer - Alexis Meunier</title>
+  <meta name="description" content="A path tracer written from scratch in C++20. It renders on the CPU and writes a PPM image.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../nav.js" data-root="../" defer></script>
+</head>
+<body>
+  <main class="project">
+    <h1>CPU Path Tracer</h1>
+    <p class="lead">A path tracer written from scratch in C++20. It renders on the CPU and writes a PPM image.</p>
+    <p class="meta">C++20. <a href="https://github.com/Alexis-Meunier/CPU-Path-Tracer">Source on GitHub</a></p>
+
+    <h2>Overview</h2>
+    <p>Built during EPITA&#x27;s IMAGE major, together with Roman Miralves, after learning how path tracing works. Scenes are described in code by creating objects and setting their positions.</p>
+
+    <h2>Features</h2>
+    <ul class="features">
+      <li>Spheres, triangles and complex meshes read from .obj files, sped up with a BVH</li>
+      <li>Blobs (implicit surfaces)</li>
+      <li>Glass, image textures, uniform textures and procedural textures (sky and wood, from 3D Perlin noise)</li>
+      <li>Point lights and circle (spot) lights</li>
+    </ul>
+
+    <h2>Demo</h2>
+    <div class="demo">
+  <figure><img src="../media/path_tracer_result.jpg" alt="Default scene rendered by the path tracer"><figcaption>The default scene, which uses every feature. It takes about 20 minutes to render.</figcaption></figure>
+    </div>
+
+    <h2>Run it</h2>
+    <pre><code>make
+./main render.ppm</code></pre>
+
+    <p class="back"><a href="../index.html#projects">Back to all projects</a></p>
+  </main>
+</body>
+</html>

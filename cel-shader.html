@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cel Shader - Alexis Meunier</title>
+  <meta name="description" content="A toon shader for .obj models, with a movable light and an adjustable black outline.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../nav.js" data-root="../" defer></script>
+</head>
+<body>
+  <main class="project">
+    <h1>Cel Shader</h1>
+    <p class="lead">A toon shader for .obj models, with a movable light and an adjustable black outline.</p>
+    <p class="meta">C++, OpenGL, GLSL. <a href="https://github.com/Alexis-Meunier">Source on GitHub</a></p>
+
+    <h2>Overview</h2>
+    <p>Built with a teammate (Zarvork) for a school project to learn OpenGL. It loads .obj models, with or without textures, and renders them with discrete light bands and a black outline, like a cartoon.</p>
+    <p class="note">The test model is the 12140 Skull v3 L2 by jesusterradagomez, from Sketchfab.</p>
+
+    <h2>Features</h2>
+    <ul class="features">
+      <li>Cel / toon shading with banded lighting</li>
+      <li>Colour interpolation you can switch between linear and logarithmic</li>
+      <li>Outline thickness you can change while running</li>
+      <li>Free-fly camera and a light you can move around the model</li>
+      <li>Toon shading can be turned off for models without textures</li>
+    </ul>
+
+    <h2>Demo</h2>
+    <div class="demo">
+  <!-- TODO: add a screenshot, e.g. <img src="../media/cel-shader.png" alt="Skull rendered with the cel shader"> -->
+    </div>
+
+    <h2>Run it</h2>
+    <pre><code>cmake -S . -B build
+cmake --build build
+./build/CelShading 0 objects skull.obj 2</code></pre>
+
+    <p class="back"><a href="../index.html#projects">Back to all projects</a></p>
+  </main>
+</body>
+</html>

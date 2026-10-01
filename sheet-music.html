@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sheet Music Recognition - Alexis Meunier</title>
+  <meta name="description" content="Finds the notes on a score. Prototyped in Python, then rewritten in C++ and benchmarked against it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../nav.js" data-root="../" defer></script>
+</head>
+<body>
+  <main class="project">
+    <h1>Sheet Music Recognition</h1>
+    <p class="lead">Finds the notes on a score. Prototyped in Python, then rewritten in C++ and benchmarked against it.</p>
+    <p class="meta">C++, Python, OpenCV. <a href="https://github.com/Alexis-Meunier">Source on GitHub</a></p>
+
+    <h2>Overview</h2>
+    <p>A school project in two steps: a Python prototype, then a C++ version to simulate the move from prototype to real implementation. It is evaluated against the real notes of 10 scores.</p>
+
+    <h2>Features</h2>
+    <ul class="features">
+      <li>Detection of the notes on a score image</li>
+      <li>Evaluation against ground-truth .agnostic files</li>
+      <li>Benchmark option to time a single recognition or the full evaluation</li>
+      <li>Python prototype: about 0.07 s per image. C++ version: under 0.01 s</li>
+    </ul>
+
+    <h2>Demo</h2>
+    <div class="demo">
+  <figure><img src="../media/bboxes.png" alt="Detected notes on a score"><figcaption>Detected elements on a score.</figcaption></figure>
+    </div>
+
+    <h2>Run it</h2>
+    <pre><code>cd cpp
+cmake -S . -B build
+cmake --build build
+./build/TIFO ../data/evaluation/partition_1/partition.png</code></pre>
+
+    <p class="back"><a href="../index.html#projects">Back to all projects</a></p>
+  </main>
+</body>
+</html>

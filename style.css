@@ -193,3 +193,79 @@ h2 {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* Top menu */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem max(1.5rem, calc((100% - 62rem) / 2 + 1.5rem));
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--display);
+  font-weight: 600;
+}
+
+.site-nav a { text-decoration: none; }
+.site-nav .brand { color: var(--fg); font-weight: 800; font-size: 1.1rem; }
+.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+.nav-right > a:hover, .menu summary:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+
+.menu { position: relative; }
+.menu summary { cursor: pointer; color: var(--link); list-style: none; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu summary::after { content: " \25BE"; }
+.menu summary:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
+
+.menu ul {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.6rem);
+  min-width: 17rem;
+  margin: 0;
+  padding: 0.5rem;
+  list-style: none;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.menu li a { display: block; padding: 0.5rem 0.75rem; color: var(--fg); border-radius: 4px; }
+.menu li a:hover, .menu li a[aria-current="page"] { background: var(--line); }
+
+/* Project pages */
+main.project { max-width: 46rem; padding-top: 3rem; }
+.project h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); font-weight: 800; letter-spacing: -0.03em; }
+.project .meta { color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem; }
+.project h2 { font-size: 1.5rem; margin: 2.5rem 0 0.75rem; }
+.features { padding-left: 1.2rem; }
+.features li { margin-bottom: 0.4rem; }
+.note { color: var(--muted); font-size: 0.95rem; }
+
+.demo img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; }
+.demo figure { margin: 0; }
+.demo figcaption { color: var(--muted); font-size: 0.9rem; margin-top: 0.4rem; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.demo-frame { width: 100%; height: 36rem; border: 1px solid var(--line); border-radius: 6px; background: #000; }
+
+pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  background: var(--line);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.back { margin-top: 3rem; }
+
+@media (max-width: 40rem) {
+  .pair { grid-template-columns: 1fr; }
+  .demo-frame { height: 26rem; }
+  .menu ul { min-width: 14rem; }
+}

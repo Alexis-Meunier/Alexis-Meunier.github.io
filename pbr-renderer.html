@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PBR Renderer - Alexis Meunier</title>
+  <meta name="description" content="A physically based renderer in the browser, showing 25 spheres with different metallicity and roughness.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../nav.js" data-root="../" defer></script>
+</head>
+<body>
+  <main class="project">
+    <h1>PBR Renderer</h1>
+    <p class="lead">A physically based renderer in the browser, showing 25 spheres with different metallicity and roughness.</p>
+    <p class="meta">TypeScript, WebGL2. <a href="https://github.com/Alexis-Meunier">Source on GitHub</a></p>
+
+    <h2>Overview</h2>
+    <p>Built on a starter provided by the course. Use the interface to set each sphere&#x27;s material and to display every intermediate step of the pipeline, so each stage can be checked on its own.</p>
+
+    <h2>Features</h2>
+    <ul class="features">
+      <li>Point lights, Lambertian diffuse and Cook-Torrance GGX specular</li>
+      <li>Tone mapping from HDR to LDR</li>
+      <li>Diffuse and specular image-based lighting from RGBM environment maps</li>
+      <li>Specular lighting from the pre-computed textures or from a probe generated at startup</li>
+      <li>Controls for metallicity, roughness and the displayed step</li>
+    </ul>
+
+    <h2>Demo</h2>
+    <div class="demo">
+  <p>Needs a browser with WebGL2. <a href="../demo/pbr/index.html">Open the demo in its own tab</a>.</p><iframe class="demo-frame" src="../demo/pbr/index.html" title="PBR renderer demo" loading="lazy" allowfullscreen></iframe>
+  <!-- Build your app and copy its output into demo/pbr/ (see the README of the portfolio). -->
+    </div>
+
+    <h2>Run it</h2>
+    <pre><code>yarn
+yarn dev</code></pre>
+
+    <p class="back"><a href="../index.html#projects">Back to all projects</a></p>
+  </main>
+</body>
+</html>
