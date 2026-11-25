@@ -1,26 +1,35 @@
-// Shared top menu. To add a project, add a line to PROJECTS and create projects/<slug>.html.
+// Shared top menu. To add a project, add a line to its group in PROJECTS and create projects/<slug>.html.
 (function () {
   var PROJECTS = [
-    ["opengl-scene", "OpenGL Shader Scene"],
-    ["deferred-renderer", "Deferred Renderer"],
-    ["cel-shader", "Cel Shader"],
-    ["path-tracer", "CPU Path Tracer"],
-    ["movement-filter", "Real-time Movement Filter"],
-    ["minimou", "Minimou"],
-    ["pbr-renderer", "PBR Renderer"],
-    ["sheet-music", "Sheet Music Recognition"],
-    ["pulmetrix", "PulMetrix"],
-    ["tumor-study", "Tumor Progression Study"],
-    ["fast-marching", "Numba Fast Marching"]
+    ["Rendering", [
+      ["opengl-scene", "OpenGL Shader Scene"],
+      ["deferred-renderer", "Deferred Renderer"],
+      ["pbr-renderer", "PBR Renderer"],
+      ["path-tracer", "CPU Path Tracer"],
+      ["cel-shader", "Cel Shader"]
+    ]],
+    ["Vision & Image Processing", [
+      ["movement-filter", "Real-time Movement Filter"],
+      ["sheet-music", "Sheet Music Recognition"],
+      ["minimou", "Minimou"],
+      ["fast-marching", "Numba Fast Marching"]
+    ]],
+    ["Medical Imaging", [
+      ["pulmetrix", "PulMetrix"],
+      ["tumor-study", "Tumor Progression Study"]
+    ]]
   ];
 
   var tag = document.querySelector("script[data-root]");
   var root = tag ? tag.getAttribute("data-root") : "";
   var page = location.pathname.split("/").pop();
 
-  var items = PROJECTS.map(function (p) {
-    var current = page === p[0] + ".html" ? ' aria-current="page"' : "";
-    return '<li><a href="' + root + "projects/" + p[0] + '.html"' + current + ">" + p[1] + "</a></li>";
+  var groups = PROJECTS.map(function (g) {
+    var links = g[1].map(function (p) {
+      var current = page === p[0] + ".html" ? ' aria-current="page"' : "";
+      return '<li><a href="' + root + "projects/" + p[0] + '.html"' + current + ">" + p[1] + "</a></li>";
+    }).join("");
+    return '<div class="menu-group"><p>' + g[0].replace("&", "&amp;") + "</p><ul>" + links + "</ul></div>";
   }).join("");
 
   var nav = document.createElement("nav");
@@ -29,7 +38,7 @@
   nav.innerHTML =
     '<a class="brand" href="' + root + 'index.html">Alexis Meunier</a>' +
     '<div class="nav-right">' +
-    '<details class="menu"><summary>Projects</summary><ul>' + items + "</ul></details>" +
+    '<details class="menu"><summary>Projects</summary><div class="menu-panel">' + groups + "</div></details>" +
     '<a href="' + root + 'index.html#contact">Contact</a>' +
     "</div>";
   document.body.insertBefore(nav, document.body.firstChild);
