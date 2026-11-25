@@ -1,12 +1,17 @@
 // Shared top menu. To add a project, add a line to PROJECTS and create projects/<slug>.html.
 (function () {
   var PROJECTS = [
+    ["opengl-scene", "OpenGL Shader Scene"],
+    ["deferred-renderer", "Deferred Renderer"],
     ["cel-shader", "Cel Shader"],
     ["path-tracer", "CPU Path Tracer"],
     ["movement-filter", "Real-time Movement Filter"],
     ["minimou", "Minimou"],
     ["pbr-renderer", "PBR Renderer"],
-    ["sheet-music", "Sheet Music Recognition"]
+    ["sheet-music", "Sheet Music Recognition"],
+    ["pulmetrix", "PulMetrix"],
+    ["tumor-study", "Tumor Progression Study"],
+    ["fast-marching", "Numba Fast Marching"]
   ];
 
   var tag = document.querySelector("script[data-root]");

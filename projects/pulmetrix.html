@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PulMetrix - Alexis Meunier</title>
+  <meta name="description" content="A web app that segments the lungs on DICOM chest X-rays and measures how asymmetric they are.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../nav.js" data-root="../" defer></script>
+</head>
+<body>
+  <main class="project">
+    <h1>PulMetrix</h1>
+    <p class="lead">A web app that segments the lungs on DICOM chest X-rays and measures how asymmetric they are.</p>
+    <p class="meta">Python, FastAPI, React, Docker. <a href="https://github.com/Alexis-Meunier/PulMetrix">Source on GitHub</a></p>
+
+    <h2>Overview</h2>
+    <p>A group medical imaging project. You load a chest X-ray in DICOM format, the app segments both lungs, then compares them. A FastAPI backend does the image processing and a React frontend shows the results.</p>
+
+    <h2>Features</h2>
+    <ul class="features">
+      <li>Automatic segmentation with TVAC, an active contour based on total variation</li>
+      <li>Semi-manual segmentation by region growing from points you click</li>
+      <li>Asymmetry analysis between the left and right lung</li>
+      <li>Documented REST API with Swagger</li>
+      <li>Frontend and backend started together with Docker Compose</li>
+    </ul>
+
+    <h2>Demo</h2>
+    <div class="demo">
+  <figure><img src="https://raw.githubusercontent.com/Alexis-Meunier/PulMetrix/HEAD/UI.png" alt="PulMetrix interface with a segmented chest X-ray"><figcaption>The interface.</figcaption></figure><div class="pair"><figure><img src="https://raw.githubusercontent.com/Alexis-Meunier/PulMetrix/HEAD/output4.png" alt="Chest X-ray with the lung contours drawn"><figcaption>Segmented lungs</figcaption></figure><figure><img src="https://raw.githubusercontent.com/Alexis-Meunier/PulMetrix/HEAD/mask4.png" alt="Binary lung mask"><figcaption>Mask</figcaption></figure></div>
+    </div>
+
+    <h2>Run it</h2>
+    <pre><code>docker compose up -d
+# interface on http://localhost, API on port 8000</code></pre>
+
+    <p class="back"><a href="../index.html#projects">Back to all projects</a></p>
+  </main>
+</body>
+</html>

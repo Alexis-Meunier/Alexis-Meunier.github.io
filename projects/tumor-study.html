@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tumor Progression Study - Alexis Meunier</title>
+  <meta name="description" content="Compares two brain MRI scans of the same patient, taken at different dates, to measure how a tumor changed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../nav.js" data-root="../" defer></script>
+</head>
+<body>
+  <main class="project">
+    <h1>Tumor Progression Study</h1>
+    <p class="lead">Compares two brain MRI scans of the same patient, taken at different dates, to measure how a tumor changed.</p>
+    <p class="meta">Python, ITK, VTK. <a href="https://github.com/Alexis-Meunier/VTK-ITK">Source on GitHub</a></p>
+
+    <h2>Overview</h2>
+    <p>A group project with ITK and VTK. The second scan is first aligned on the first one, then the tumor is segmented in both, so the two masks can be compared in the same space.</p>
+
+    <h2>Features</h2>
+    <ul class="features">
+      <li>Registration in two stages, rigid then affine, with Mattes mutual information</li>
+      <li>Tumor segmentation by confidence-connected region growing</li>
+      <li>Volume change between the two dates</li>
+      <li>2D slice viewer with both tumor contours drawn on it</li>
+      <li>3D view of both tumors, and volume ray-casting of the brain</li>
+    </ul>
+
+    <h2>Demo</h2>
+    <div class="demo">
+  <figure><img src="https://raw.githubusercontent.com/Alexis-Meunier/VTK-ITK/HEAD/output/2d_comparison.png" alt="Brain MRI slices with the tumor at both dates"><figcaption>The tumor at the two dates, on the same slice.</figcaption></figure>
+    </div>
+
+    <h2>Run it</h2>
+    <pre><code>uv run main.py --display comparison</code></pre>
+
+    <p class="back"><a href="../index.html#projects">Back to all projects</a></p>
+  </main>
+</body>
+</html>

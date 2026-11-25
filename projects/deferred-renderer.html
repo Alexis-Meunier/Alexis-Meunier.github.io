@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deferred Renderer - Alexis Meunier</title>
+  <meta name="description" content="An OpenGL renderer extended step by step with culling, a depth pre-pass, shadow maps and deferred shading.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../nav.js" data-root="../" defer></script>
+</head>
+<body>
+  <main class="project">
+    <h1>Deferred Renderer</h1>
+    <p class="lead">An OpenGL renderer extended step by step with culling, a depth pre-pass, shadow maps and deferred shading.</p>
+    <p class="meta">C++17, OpenGL 4.5, GLSL. <a href="https://github.com/Alexis-Meunier/OM3D">Source on GitHub</a></p>
+
+    <h2>Overview</h2>
+    <p>Built during the OM3D course at EPITA. The course gives a small OpenGL engine that loads glTF scenes, and each lab adds a rendering technique to it. The test scenes include Amazon Lumberyard Bistro and the Damaged Helmet.</p>
+
+    <h2>Features</h2>
+    <ul class="features">
+      <li>Frustum culling and back-face culling with bounding boxes</li>
+      <li>Depth pre-pass to skip shading hidden pixels</li>
+      <li>Shadow mapping for the sun, with shadow acne removed</li>
+      <li>Deferred shading with a G-buffer</li>
+      <li>Point lights drawn in a separate lighting pass over the G-buffer</li>
+    </ul>
+
+    <h2>Demo</h2>
+    <div class="demo">
+  <!-- TODO: add a screenshot, e.g. <img src="../media/deferred-renderer.png" alt="Bistro scene with deferred lighting"> -->
+    </div>
+
+    <h2>Run it</h2>
+    <pre><code>mkdir -p build/release
+cd build/release
+cmake -DCMAKE_BUILD_TYPE=Release ../..
+make</code></pre>
+
+    <p class="back"><a href="../index.html#projects">Back to all projects</a></p>
+  </main>
+</body>
+</html>

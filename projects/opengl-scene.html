@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenGL Shader Scene - Alexis Meunier</title>
+  <meta name="description" content="A real-time scene built with geometry, tessellation and compute shaders: terrain, water, grass, bloom and an exploding bunny.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../nav.js" data-root="../" defer></script>
+</head>
+<body>
+  <main class="project">
+    <h1>OpenGL Shader Scene</h1>
+    <p class="lead">A real-time scene built with geometry, tessellation and compute shaders: terrain, water, grass, bloom and an exploding bunny.</p>
+    <p class="meta">C++20, OpenGL 4.5, GLSL. <a href="https://github.com/Alexis-Meunier/OpenGL-Advanced">Source on GitHub</a></p>
+
+    <h2>Overview</h2>
+    <p>A school project to go past vertex and fragment shaders. Each effect uses a different stage of the OpenGL 4.5 pipeline, and they all run together in one scene with a day/night cycle.</p>
+
+    <h2>Features</h2>
+    <ul class="features">
+      <li>Terrain from a heightmap made by a compute shader, with detail added by tessellation</li>
+      <li>Water waves animated by a compute shader, driven by wind speed and direction</li>
+      <li>Grass blades built by a geometry shader</li>
+      <li>Skybox and sun that follow the time of day</li>
+      <li>Moving emissive lights with a compute-shader bloom</li>
+      <li>A bunny mesh blown apart by compute and geometry shaders</li>
+      <li>Tessellation levels, wind and time of day you can change while running</li>
+    </ul>
+
+    <h2>Demo</h2>
+    <div class="demo">
+  <!-- TODO: add a screenshot, e.g. <img src="../media/opengl-scene.png" alt="Terrain, water and grass at sunset"> -->
+    </div>
+
+    <h2>Run it</h2>
+    <pre><code>sudo apt install g++ make pkg-config libglew-dev freeglut3-dev
+make
+./main</code></pre>
+
+    <p class="back"><a href="../index.html#projects">Back to all projects</a></p>
+  </main>
+</body>
+</html>

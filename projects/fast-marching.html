@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Numba Fast Marching - Alexis Meunier</title>
+  <meta name="description" content="A web app that runs the fast marching method on an image, in plain Python and with Numba, and compares the times.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../nav.js" data-root="../" defer></script>
+</head>
+<body>
+  <main class="project">
+    <h1>Numba Fast Marching</h1>
+    <p class="lead">A web app that runs the fast marching method on an image, in plain Python and with Numba, and compares the times.</p>
+    <p class="meta">Python, Numba, Streamlit, PostgreSQL, Docker. <a href="https://github.com/Alexis-Meunier/Numba-Image-Filter">Source on GitHub</a></p>
+
+    <h2>Overview</h2>
+    <p>A group project to measure what Numba gains over plain Python. You upload an image and a mask, the app runs the fast marching method from the mask with both versions, and shows the two results side by side with their run times.</p>
+
+    <h2>Features</h2>
+    <ul class="features">
+      <li>Fast marching method in plain Python and compiled with Numba</li>
+      <li>Upload images and masks, and reuse earlier uploads</li>
+      <li>Bar chart of the time saved by Numba</li>
+      <li>Database page with upload counts and last and average run times</li>
+      <li>API, PostgreSQL and Streamlit frontend in three Docker containers</li>
+    </ul>
+
+    <h2>Demo</h2>
+    <div class="demo">
+  <figure><img src="https://raw.githubusercontent.com/Alexis-Meunier/Numba-Image-Filter/HEAD/img/kirby.png" alt="Fast marching result on an image of Kirby"><figcaption>Result on a test image.</figcaption></figure>
+    </div>
+
+    <h2>Run it</h2>
+    <pre><code>docker compose up --build
+# open http://localhost:8501</code></pre>
+
+    <p class="back"><a href="../index.html#projects">Back to all projects</a></p>
+  </main>
+</body>
+</html>
